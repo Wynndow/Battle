@@ -1,8 +1,8 @@
 require 'player'
 
 describe Player do
-  subject(:vic) {described_class.new(name: "Vic")}
-  subject(:bob) {described_class.new(name: "Bob")}
+  subject(:vic) {described_class.new("Vic")}
+  subject(:bob) {described_class.new("Bob")}
 
   describe '#name' do
     it 'returns it\'s name' do
