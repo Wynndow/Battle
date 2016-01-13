@@ -7,4 +7,9 @@ module SigningIn
     click_button('Play!')
   end
 
+  def attack_and_confirm
+    click_button "Attack"
+    click_button "OK"
+  end
+
 end
