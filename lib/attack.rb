@@ -4,5 +4,4 @@ class Attack
     player.receive_damage
   end
 
-
 end

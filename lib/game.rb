@@ -23,6 +23,10 @@ class Game
     players.reject{|player| player == whos_turn}.first
   end
 
+  def player_loses?
+    opponent.hit_points <= 0
+  end
+
   private
 
   attr_reader :players

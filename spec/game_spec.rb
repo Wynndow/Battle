@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   subject(:game) {described_class.new(vic, bob)}
   let(:vic) {double(:player, name: 'Vic')}
-  let(:bob) {double(:player, name: 'Bob')}
+  let(:bob) {double(:player, name: 'Bob', hit_points: 0)}
 
 describe 'defaults' do
 
@@ -33,6 +33,13 @@ describe '#switch_turns' do
     game.switch_turns
     expect(game.whos_turn).to eq(bob)
   end
+end
+
+describe '#player_loses?' do
+  it 'returns true if a players HP drops below 0' do
+    expect(game.player_loses?).to be(true)
+  end
+
 end
 
 

@@ -32,8 +32,16 @@ class Battle < Sinatra::Base
   end
 
   post '/switch_turns' do
+    if $game.player_loses?
+      redirect '/game_over'
+    end
     $game.switch_turns
     redirect '/play'
+  end
+
+  get '/game_over' do
+    @game = $game
+    erb :game_over
   end
 
   # start the server if ruby file executed directly
