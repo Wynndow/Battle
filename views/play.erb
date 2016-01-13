@@ -6,5 +6,8 @@
   <%= @game.player_2.name %>'s HP: <%= @game.player_2.hit_points %>
 </div>
 <div>
-  <a href='/attack'>Attack!</a>
+  <p><%=@game.whos_turn.name %>, it's your turn to Attack!</p>
+  <form method="post" action='/attack'>
+    <input type="submit" value="Attack"/>
+  </form>
 </div>
