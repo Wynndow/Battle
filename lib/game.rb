@@ -1,5 +1,3 @@
-require_relative 'player'
-
 class Game
 
   attr_reader :whos_turn
@@ -17,16 +15,12 @@ class Game
     players.last
   end
 
-  def attack
-    opponent_of(whos_turn).receive_damage
-  end
-
   def switch_turns
-    @whos_turn = opponent_of(whos_turn)
+    @whos_turn = opponent
   end
 
-  def opponent_of(current_player)
-    players.reject{|player| player == current_player}.first
+  def opponent
+    players.reject{|player| player == whos_turn}.first
   end
 
   private

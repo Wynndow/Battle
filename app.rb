@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/attack'
 
 class Battle < Sinatra::Base
 
@@ -21,7 +22,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    $game.attack
+    Attack.the_other_player($game.opponent)
     redirect '/attack'
   end
 

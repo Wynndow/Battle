@@ -8,11 +8,11 @@ describe Game do
 describe 'defaults' do
 
   it 'takes one player on creation' do
-    expect(game.player_1.name).to eq('Vic')
+    expect(game.player_1).to eq(vic)
   end
 
   it 'takes two players on creation' do
-    expect(game.player_2.name).to eq('Bob')
+    expect(game.player_2).to eq(bob)
   end
 
   it 'is initially P1\'s turn to attack' do
@@ -21,13 +21,12 @@ describe 'defaults' do
 
 end
 
-
-describe '#attack' do
-  it 'damages the player' do
-    expect(bob).to receive(:receive_damage)
-    game.attack
+describe '#opponent' do
+  it 'returns the opponent' do
+    expect(game.opponent).to eq(bob)
   end
 end
+
 
 describe '#switch_turns' do
   it 'changes who\'s turn it is' do
