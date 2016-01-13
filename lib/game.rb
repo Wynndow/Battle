@@ -25,8 +25,6 @@ class Game
     @whos_turn = opponent_of(whos_turn)
   end
 
-  private
-
   def opponent_of(current_player)
     @players.reject{|player| player == current_player}.first
   end

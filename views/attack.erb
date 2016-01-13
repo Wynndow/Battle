@@ -1,4 +1,7 @@
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>!
+<%= @game.whos_turn.name %> attacked <%= @game.opponent_of(@game.whos_turn).name %>!
+
 <br>
 <br>
-<a href='/play'>OK</a>
+<form method="post" action="/switch_turns">
+  <input type="submit" value="OK"/>
+</form>
