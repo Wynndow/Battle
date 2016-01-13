@@ -10,11 +10,11 @@ class Game
   end
 
   def player_1
-    @players.first
+    players.first
   end
 
   def player_2
-    @players.last
+    players.last
   end
 
   def attack
@@ -26,7 +26,11 @@ class Game
   end
 
   def opponent_of(current_player)
-    @players.reject{|player| player == current_player}.first
+    players.reject{|player| player == current_player}.first
   end
+
+  private
+
+  attr_reader :players
 
 end
