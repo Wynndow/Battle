@@ -35,9 +35,9 @@ describe '#switch_turns' do
   end
 end
 
-describe '#player_loses?' do
+describe '#game_over?' do
   it 'returns true if a players HP drops below 0' do
-    expect(game.player_loses?).to be(true)
+    expect(game.game_over?).to be(true)
   end
 
 end

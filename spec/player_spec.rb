@@ -16,9 +16,10 @@ describe Player do
     end
   end
 
-  describe '#recieve_damage' do
-    it 'reduces a player\'s HP' do
-      expect{ vic.receive_damage }.to change{ vic.hit_points }.by(-Player::DEFAULT_ATTACK)
+  describe '#receive_damage' do
+    it 'reduces a player\'s HP by a random amount' do
+      allow(Kernel).to receive(:rand).and_return(10)
+      expect{ vic.receive_damage }.to change{ vic.hit_points }.by(-10)
     end
   end
 

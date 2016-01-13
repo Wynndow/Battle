@@ -23,7 +23,7 @@ class Game
     players.reject{|player| player == whos_turn}.first
   end
 
-  def player_loses?
+  def game_over?
     opponent.hit_points <= 0
   end
 

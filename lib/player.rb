@@ -11,7 +11,7 @@ class Player
   end
 
   def receive_damage
-    @hit_points -= DEFAULT_ATTACK
+    @hit_points -= Kernel.rand(80)
   end
 
 end

@@ -32,7 +32,7 @@ class Battle < Sinatra::Base
   end
 
   post '/switch_turns' do
-    if $game.player_loses?
+    if $game.game_over?
       redirect '/game_over'
     end
     $game.switch_turns
